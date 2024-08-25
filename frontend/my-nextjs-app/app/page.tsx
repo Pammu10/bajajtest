@@ -4,6 +4,7 @@ import { useState, ChangeEvent, FormEvent } from 'react';
 import axios from 'axios';
 import styles from './Home.module.css';
 import Select from 'react-select';
+import { MultiValue } from 'react-select';
 
 interface ResponseData {
   is_success: boolean;
@@ -53,8 +54,10 @@ export default function Home() {
     setJsonInput(event.target.value);
   };
 
-  const handleDropdownChange = (selectedOptions: { value: string; label: string }[] | null) => {
-    setSelectedOptions(selectedOptions || []);
+  const handleDropdownChange = (newValue: MultiValue<{ value: string; label: string }>,
+    actionMeta: any) => {
+      const selected = newValue as { value: string; label: string }[];
+      setSelectedOptions(selected);
   };
 
   const renderResponseData = () => {
