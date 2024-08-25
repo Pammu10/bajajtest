@@ -40,7 +40,7 @@ export default function Home() {
         throw new Error('Invalid JSON format. The "data" field must be an array.');
       }
 
-      const result = await axios.post<ResponseData>('http://localhost:5000/bfhl', parsedData);
+      const result = await axios.post<ResponseData>('https://bajajtest-mwte.onrender.com/bfhl', parsedData);
       setResponse(result.data);
       setError(null);
     } catch (err) {
