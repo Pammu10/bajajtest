@@ -56,9 +56,11 @@
 
 
 .dropdowndiv {
-  flex-direction:column;
-  flex:1;
-  margin: auto 100px;
+  width: auto;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .response, .error {
